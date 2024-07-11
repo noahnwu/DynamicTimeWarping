@@ -8,15 +8,17 @@ The goal of our implementation of DTW on EHR data was to test two hypotheses:
 1. Different longitudinal progression patterns of cancer cachexia exist 
 2. Differences in longituindal progression portend differential outcomes
 
+In this repository, we will use the original DTW code on a simulated dataset to illustrate its uses in clustering.
+
 ## Files in this repository: 
 
 * ManuscriptPipeline.R
 	* This file, when executed sequentially, runs the main pipeline described on a simulated dataset. It is divided into 4 primary parts: 
 	
 			1. Generation of the Simulated Dataset
-			1. Execution of our implementation of the DTW algorithm and a comparison with a previously published R package 
-			1. Clustering of patients based on the DTW distance with the K-Medoids Algorithm 
-			1. A simplified longitudinal visualizaiton of patients' cachexia sequences over pseudotime
+			2. Execution of our implementation of the DTW algorithm and a comparison with a previously published R package 
+			3. Clustering of patients based on the DTW distance with the K-Medoids Algorithm 
+			4. A simplified longitudinal visualizaiton of patients' cachexia sequences over pseudotime
 			
 * DTW.R 
 	* This contains the code for our implementation of the DTW algorithm and is used in the ManuscriptPipeline.R script
