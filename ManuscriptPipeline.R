@@ -29,6 +29,8 @@ sapply(required.packages, function(x) {
     }
   })
 #previously developed dtw package. function used here is called 'dtw'
+#note that this was not the function used for our manuscript and is 
+#included here only for the sake of comparison with our implementation of DTW
 library(dtw)
 #will use for some data manipulation
 library(tidyverse)
@@ -44,13 +46,15 @@ library(cluster)
 #to a previously developed one to ensure that there were no errors in our 
 #code
 source("DTW.R")
+#A data manipulation function
 source("AddIndividualIDs.R")
 
 ######## 1. Generate Simulated Data ########
 
 #Due to data privacy restrictions, we are unable to provide the exact dataset
-#utilized in this work. However, a randomly generated dataset will be created 
-#consisting of data similar to that used for illustrative purposes. 
+#utilized in this work. However, a simulated dataset will be created 
+#consisting of data similar to that used in the manuscript 
+#for illustrative purposes. 
 
 #All Cachexia Measures Calculated from 6-month Weight Loss and
 #BMI resulted in one of three possible values according to the 2011 Fearon
