@@ -18,3 +18,10 @@ our manuscript, Theresa Walunas.
 
 * AddIndividualIDs.R
 	* Contains a function referenced in the ManuscriptPipeline.R script and is used for simple data manipulation
+
+
+
+## How to use this code. 
+
+Once you have successfully cloned this repo, run the ManuscriptPipeline.R in the IDE of your choice to view the results of the analysis. You are 
+also welcome to use our DTW implementation for your own projects found in DTW.R (please cite our Cachexia Study!)
