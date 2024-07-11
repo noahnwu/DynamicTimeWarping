@@ -1,4 +1,21 @@
-#this script compares
+#This script runs through the DTW and Clustering Pipeline Utilized in 
+#our manuscript 
+
+#Here you will find 4 primary sections. Note that these must be run sequentially
+#in order for them to function.
+
+#1. Generation of a simulated dataset with three distinct groups of patients
+#   based on their Fearon Consensus Criteria Levels
+
+#2. Comparison of our DTW algorithm versus a previously published R package 
+#   To ensure there were no errors in DTW development
+
+#3. Clustering of patients using the K-Medoids Algorithm (Paritioning Around Medoids)
+#   based on their DTW distance.
+
+#4. Visualization of the clusters over pseudotime
+
+
 #DTW package is that described in
 #Toni Giorgino (2009). Computing and Visualizing Dynamic Time Warping Alignments in R: 
 #The dtw Package. Journal of Statistical Software, 31(7), 1-24, doi:10.18637/jss.v031.i07.
@@ -29,7 +46,7 @@ library(cluster)
 source("DTW.R")
 source("AddIndividualIDs.R")
 
-######## Generate Simulated Data ########
+######## 1. Generate Simulated Data ########
 
 #Due to data privacy restrictions, we are unable to provide the exact dataset
 #utilized in this work. However, a randomly generated dataset will be created 
@@ -106,7 +123,7 @@ PatientData = bind_rows(
 length(unique(PatientData$PatientID)) == (3*GroupSize)
 
 
-############## Perform DTW #################
+############## 2. Perform DTW #################
 
 #Before proceeding with DTW, we must create a reference data frame that lists 
 #all combinations of the 300 patients in our simulated dataset
@@ -142,7 +159,7 @@ plot(DTW.Previous,
 cor(DTW.Manuscript, DTW.Previous) #1
 sum(DTW.Manuscript == DTW.Previous) == length(DTW.Previous) #TRUE
 
-############# Cluster Patients ##############
+############# 3. Cluster Patients Based on DTW Distance ##############
 
 #We first must create a square distance matrix to implement k-medoids
 
@@ -221,7 +238,7 @@ BestCluster$clustering %>%
 #patients at the beginning
 
 
-###### Visualize Cachexia Severity Over Time By Cluster #######
+###### 4. Visualize Cachexia Severity Over Time By Cluster #######
 #We cannot entirely recreate our visualization. 
 #However, we can compute the mean Fearon Level over the artificial time points
 #Between our starting groups as well as our clusters to see their differences 
