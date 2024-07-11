@@ -1,12 +1,18 @@
 # DynamicTimeWarping
 
 Thanks for taking a look at our repository. For any questions that arise, please reach out to the corresponding author of 
-our manuscript, Theresa Walunas. 
+our manuscript, Theresa Walunas.
+
+The goal of our implementation of DTW on EHR data was to test two hypotheses: 
+
+1. Different longitudinal progression patterns of cancer cachexia exist 
+2. Differences in longituindal progression portend differential outcomes
 
 ## Files in this repository: 
 
 * ManuscriptPipeline.R
-	* This file, when executed sequentially, runs the main pipeline described on a simulated dataset. It is divided into 4 primary parts
+	* This file, when executed sequentially, runs the main pipeline described on a simulated dataset. It is divided into 4 primary parts: 
+	
 			1. Generation of the Simulated Dataset
 			1. Execution of our implementation of the DTW algorithm and a comparison with a previously published R package 
 			1. Clustering of patients based on the DTW distance with the K-Medoids Algorithm 
