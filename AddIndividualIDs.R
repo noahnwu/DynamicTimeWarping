@@ -14,4 +14,3 @@ AddIndividualIDs = function(SequenceList,
   
 }
 
-test = AddIndividualIDs(Mild, "Mild")

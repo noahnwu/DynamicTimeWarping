@@ -1,4 +1,4 @@
-dtw = function(x,y, DistFun = proxy::dist, 
+DTW.Forrest = function(x,y, DistFun = proxy::dist, 
                dist.only = T, ...) { 
   
   #compute distance matrix
@@ -94,42 +94,3 @@ dtw = function(x,y, DistFun = proxy::dist,
   
 } 
 
-##### CREATE A CUSTOM DISTANCE FUNCTION. This was one I used in piloting a project 
-JaccardIndex = function(x,y, split = F,
-                        uni.vec = T, ...) {
-  if(split == T & uni.vec == F) { 
-    stop("Unable to split strings of matrices")
-  }
-  if(split == T) { 
-    x.split = str_split(x, " ", simplify = T)
-    y.split = str_split(y, " ", simplify = T)
-  } else { 
-    x.split = x  
-    y.split = y
-  }
-  
-  Fun = function(x,y) { 
-    intersection=length(intersect(x,y)) 
-    union = length(unique(c(x,y)))
-    j.index = 1 - (intersection/union)
-  }
-  #this works for vectors. However, if there are multiple 
-  #events on a single day, will need to have each day represent a vector
-  #apply can be used. Will add a "vector" mode option in the future
-  #to make for more generalizable function
-  if(uni.vec == T) { 
-    dist.mat = sapply(as.list(y.split), function(z) { 
-                          sapply(x.split, function(q) { 
-                            return(Fun(q[!is.null(q) & !is.na(q)], z[!is.null(z) & !is.na(z)]))
-                          })
-                        })
-  } else { 
-    dist.mat = apply(y.split, 2, function(z) { 
-      apply(x.split, 2, function(q) { 
-        return(Fun(q[!is.na(q)], z[!is.na(z)]))
-      })
-    })
-    
-  }
-  return(unname(dist.mat))
-}
