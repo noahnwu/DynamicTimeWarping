@@ -45,9 +45,9 @@ library(cluster)
 #we first compared the output distance metrics from our algorithm 
 #to a previously developed one to ensure that there were no errors in our 
 #code
-source("DTW.R")
+source("scripts/DTW.R")
 #A data manipulation function
-source("AddIndividualIDs.R")
+source("scripts/AddIndividualIDs.R")
 
 ######## 1. Generate Simulated Data ########
 

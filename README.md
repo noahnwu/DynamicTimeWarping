@@ -20,11 +20,11 @@ In this repository, we will use the original DTW code on a simulated dataset to 
 			3. Clustering of patients based on the DTW distance with the K-Medoids Algorithm 
 			4. A simplified longitudinal visualizaiton of patients' cachexia sequences over pseudotime
 			
-* DTW.R 
+* scripts/DTW.R 
 	* This contains the code for our implementation of the DTW algorithm and is used in the ManuscriptPipeline.R script
 	* We developed our own code for DTW due to our future goal of utilizing other distance metrics with different data types
 
-* AddIndividualIDs.R
+* scripts/AddIndividualIDs.R
 	* Contains a function referenced in the ManuscriptPipeline.R script and is used for simple data manipulation
 
 
