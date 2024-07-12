@@ -15,7 +15,7 @@ In this repository, we will use the original DTW code on a simulated dataset to 
 * ManuscriptPipeline.R
 	* This file, when executed sequentially, runs the main pipeline described on a simulated dataset. It is divided into 4 primary parts: 
 	
-			1. Generation of the Simulated Dataset
+			1. Generation of a Simulated Toy Dataset
 			2. Execution of our implementation of the DTW algorithm and a comparison with a previously published R package 
 			3. Clustering of patients based on the DTW distance with the K-Medoids Algorithm 
 			4. A simplified longitudinal visualizaiton of patients' cachexia sequences over pseudotime
