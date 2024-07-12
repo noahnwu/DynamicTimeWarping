@@ -126,7 +126,6 @@ PatientData = bind_rows(
 #check that there are 3*GroupSize Patients in Our Dataset
 length(unique(PatientData$PatientID)) == (3*GroupSize)
 
-
 ############## 2. Perform DTW #################
 
 #Before proceeding with DTW, we must create a reference data frame that lists 
