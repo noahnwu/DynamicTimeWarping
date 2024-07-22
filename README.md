@@ -33,3 +33,6 @@ In this repository, we will use the original DTW code on a simulated dataset to 
 
 Once you have successfully cloned this repo, run the ManuscriptPipeline.R in the IDE of your choice to view the results of the analysis. You are 
 also welcome to use our DTW implementation for your own projects found in DTW.R (please cite our Cachexia Study!)
+
+When running the ManuscriptPipeline.R script, please be sure that your working directory 
+is the base directory of the repository (i.e. the directory in which the ManuscriptPipeline.R script is located)
